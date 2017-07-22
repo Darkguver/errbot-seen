@@ -65,4 +65,5 @@ class Seen(BotPlugin):
         if not data:
             return 'I have no record of %s' % args
 
-        return 'I last saw {username} {since} ago (on {date}) which said "{message}"'.format(**data)
+        return 'I last saw {username} {since} ' \
+               'ago (on {date}) which said "{message}"'.format(**data)
