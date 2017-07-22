@@ -1,0 +1,11 @@
+[Core]
+Name = Seen
+Module = seen
+
+[Documentation]
+Description = Where is this guy?
+
+[Python]
+Version = 3
+
+[Errbot]
