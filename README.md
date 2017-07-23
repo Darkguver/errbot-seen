@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/Gnoffel/errbot-seen.svg?branch=master)](https://travis-ci.org/Gnoffel/errbot-seen)
+[![Coverage Status](https://coveralls.io/repos/Gnoffel/errbot-seen/badge.png?branch=master)](https://coveralls.io/github/Gnoffel/errbot-seen?branch=master)
+
 errbot-seen
 ----------
 
@@ -13,5 +16,3 @@ Installation
 ------------
 
 Install this plugin using `!repos install https://github.com/Gnoffel/errbot-seen.git`
-
-
