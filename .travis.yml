@@ -6,8 +6,9 @@ python:
 install:
   - pip install -q errbot pytest pytest-pep8 --use-wheel
   - pip install -q coverage coveralls --use-wheel
+  - test -f requirements.txt && pip install -r requirements.txt
 script:
-  - coverage run -m py.test --pep8
+  - coverage run -m py.test --pep8 -v
 after_success:
   - coveralls
 notifications:
