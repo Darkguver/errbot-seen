@@ -1,4 +1,3 @@
-# encoding=utf-8
 from datetime import datetime
 from errbot import botcmd, BotPlugin
 from errbot.utils import format_timedelta
