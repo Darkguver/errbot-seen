@@ -12,7 +12,8 @@ class TestSeen(FullStackTest):
     TIMESTAMP = datetime(2017, 7, 15, 3, 15, 28, 578312)
 
     def setUp(self, **kwargs):
-        super().setUp(extra_plugin_dir='.', loglevel=50)
+        super().setUp(extra_plugin_dir='.', loglevel=50, extra_config=dict(AUTOINSTALL_DEPS=False))
+
         self.plugin = self._bot.plugin_manager.get_plugin_obj_by_name('Seen')
 
     def test_that_save_message_saves_a_message(self):
