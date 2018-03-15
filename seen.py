@@ -13,7 +13,8 @@ class Seen(BotPlugin):
             "time": self.get_timestamp(),
             "msg": message,
         }
-        self[username] = data
+        identifyer = self.get_identifyer(username)
+        self[identifyer] = data
 
     def get_message(self, username):
         if username not in self:
@@ -44,12 +45,24 @@ class Seen(BotPlugin):
         self.log.debug("Recording presence of %s", username)
 
         self.save_message(username=username, message=message)
+    
+    def get_identifyer(self, nick):
+        frm = nick.frm
+        nick = frm.nick
+        name = frm.fullname
+        numb = frm.person
+        if nick:
+            return nick
+        elif not len(name) == 0:
+            return name
+        else:
+            return numb
 
     @botcmd(admin_only=False)
     def seen(self, mess, args):
         """Find out when someone last said something"""
 
-        requester = str(mess.frm)
+        requester = self.get_identifyer(mess)
         username = str(args)
 
         self.log.debug('{0} looking for {1}'.format(requester, username))
