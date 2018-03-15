@@ -13,8 +13,7 @@ class Seen(BotPlugin):
             "time": self.get_timestamp(),
             "msg": message,
         }
-        identifyer = self.get_identifyer(username)
-        self[identifyer] = data
+        self[username] = data
 
     def get_message(self, username):
         if username not in self:
@@ -37,8 +36,8 @@ class Seen(BotPlugin):
         message = mess.body
         if not message:
             return
-
-        username = str(mess.frm)
+        
+        username = get_identifyer(mess)
         if not username:
             return
 
